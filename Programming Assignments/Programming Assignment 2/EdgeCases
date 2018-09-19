@@ -1,0 +1,93 @@
+This file contains a list of edgecases that we have tried to cover in our assignment! The file lists all the edgecases by the TestCase Folder:
+
+TestCase01 :
+	TestCase already provided
+		- Correct Execution
+
+TestCase02:
+	TestCase already provided
+		- Correct Execution
+
+TestCase03:
+	TestCase to check whether the aggregate_votes executable merges different candidate names from different directory
+		- Correct Execution
+
+TestCase04:
+	Complex TestCase with many subdirectories.
+		- Correct Execution
+
+TestCase05:
+	TestCase with a cycle (Very easy cycle)
+		- Correct Execution
+
+TestaCase06:
+	TestCase with symbolic link but not having a cycle
+		- Correct Execution
+
+TestCase07:
+	One of the LeafNodes should not have votes.txt
+		- Correct Execution
+
+TestCase08:
+	Who_Won iteself is the LeafNode
+		- Correct Execution
+
+TestCase09:
+	One candidate's names is 1024 bytes long
+		- Correct Execution (Assuming that the aggregated thing also has at max 1024 bytes)
+
+TestCase10:
+	Permission denied to the file "votes.txt"
+		- Correct Execution
+
+TestCase11:
+	Permission denied to one of the subdirectory
+		- Correct Execution
+
+TestCase12:
+	Empty Directory
+		- Correct Execution
+
+TestCase13:
+	Wrong Path
+		- Correct Execution
+
+TestCase14:
+	No Candidate in votes.txt file.
+		- Correct Execution
+
+TestCase15:
+	Non LeafNodes has votes.txt in it
+		- Correct Execution
+
+TestCase16:
+	Leaf_Counter on non leaf node
+		- Correct Execution
+
+TestCase17:
+	Aggregate_Votes on leaf node.
+		- Correct Execution
+
+TestCase18:
+	Aggregate All the first 4 TestCases
+		- Correct Execution.
+
+TestCase19:
+	votes.txt contain empty line
+		- Correct Execution
+
+TestCase20:
+	All leaf nodes do not contain any votes.txt file.
+		- Correct execution
+
+TestCase21:
+	All leaf nodes except for one do not contain any votes.txt file.
+		- Correct execution
+
+TestCase22:
+	All leaf nodes except for one (empty) do not contain any votes.txt file.
+		- Correct execution
+
+TestCase25:
+	Advanced Cycle
+		- Correct Execution

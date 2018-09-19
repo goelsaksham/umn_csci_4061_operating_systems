@@ -1,0 +1,18 @@
+TestCase01:Given
+TestCase02:Given
+TestCase03:R1C1 thingy
+TestCase04:inputdir empty
+TestCase05:One file not given
+TestCase06:One file empty
+TestCase07:R1C1 thingy
+TestCase08:All input files empty
+TestCase09:Who_Won input file not considered
+TestCase10:Input.txt does not exist
+TestCase11:Input.txt empty
+TestCase12:WINNER CANDIDATE
+TestCase13:Candidate name with space
+TestCase14:Priority Thing
+TestCase15:Two missing input file
+TestCase16:Really big candidate name
+TestCase17:Only one file and with one candidate name
+TestCase18:Negative priority

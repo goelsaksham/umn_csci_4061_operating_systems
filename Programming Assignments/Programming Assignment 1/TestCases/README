@@ -1,0 +1,61 @@
+This folder contains folders where each folder focuses on specific test cases.
+The test case description is as follows:
+
+
+TestCase01:
+  input.txt -> works perfectly
+
+TestCase02:
+  input.txt -> works perfectly
+
+TestCase03:
+  input.txt -> back cycle should be Detected
+
+TestCase04 (Line 1):
+  input.txt -> works perfectly
+  input+num.txt
+  1. The first line does not contain numeric value at the start.
+  2. The number of candidates mentioned are not equal to the number provided. (more)
+  3. The number of candidates mentioned are not equal to the number provided. (less)
+  4. Line starts with #.
+  5. Candidate Names are duplicate.
+  6. Does not contain the first line. Empty line hence quit.
+
+TestCase05 (Line 2):
+  input.txt -> works perfectly
+  input+num.txt
+  1. Line starts with #.
+  2. Does not contain Who_Won node.
+  3. Total Number of nodes is less than 2.
+  4. Contains duplicates.
+
+TestCase06 (line 3 onwards):
+  input.txt -> works perfectly
+  input+num.txt
+  1. Line starts with #.
+  2. The string after colon does not contain anything. (omitting these lines)
+  3. There are no colons. (omitting these lines)
+  4. The name of the node on the left side of the colon does not correspond to any already specified node.
+  5. The name of the node on the right side of the colon does not correspond to any already specified node.
+  6. The Who_Won node doesnt have any children (nothing after colon). (line omitted)
+  7. The Who_Won node doesnt have any children (children do not correspond to anything). (line omitted)
+  Note - The who won node will return 0 because it has no children.
+  Can check that why Who_Won doesnt have anything. and exit.
+
+TestCase07:
+  input.txt -> works perfectly
+  input+num.txt
+  1. Executable doesn't have permissions to access any file.
+
+Testcase08:
+  input.txt -> works perfectly
+  input+num.txt
+  1. Executable cannot find the input file.
+
+Testcase09:
+  input.txt -> works perfectly
+  input+num.txt
+  1. Executable fails to perform some action.
+
+TestCase10:
+  1. Contains more than 9 types of candidates

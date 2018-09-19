@@ -1,0 +1,59 @@
+/*login: goelx029, hartm433
+  date: 04/10/18
+  name: saksham goel, franklin hartman
+  id: goelx029, hartm433
+  Extra credits Yes*/
+
+
+Details about team:
+
+    Member 1:
+        Name - Saksham Goel
+        x500 - goelx029
+        Lecture Section - 010 (11:15 am - 12:30 pm)
+        Lab Section - 015 (3:35 pm - 4:25 pm)
+    Member 2:
+        Name - Franklin Hartman
+        x500 - hartm433
+        Lecture Section - 010 (11:15 am - 12:30 pm)
+        Lab Section - 012 (12:20 pm - 1:10 pm)
+
+
+How to compile the program:
+	The program submission comes with a makefile which can be used to compile the whole program into an executable named - "votecounter". The makefile consists of three main sub commands as follows:
+
+    make -> makes the votecounter executable using the submitted .c and .h files
+    make votecounter -> makes the votecounter executable using the submitted .c and .h files
+    make clean -> cleans the directory by removing the executable made
+
+  It is advised that the makefile is used for compilation because it already contains the desired commands required to compile the votecounter application. If the user doesnt want to use the makefile, they can use the following command for compiling the votecounter application.
+
+    gcc -pthread -w -o votecounter votecounter.c
+
+  For all these commands to work, it is assumed that the following files are in the directory:
+
+    votecounter.c
+    util.h
+    validatefunctions.h
+    makefile
+
+
+How to use the program from the shell:
+  Assuming the the executable named - "votecounter" already exists in the directory which was produced using the makefile given, the program can be run using the following command:
+
+    ./votecounter <DAG.txt> <inputdir> <outputdir>
+
+    where,
+      <DAG.txt> - relative path to the file which contains the information about the DAG structure for the vote counting application.
+
+      <inputdir> - relative path to the directory which contains the files that contains the encrypted votes for the leaf nodes of the DAG structure. The file names should be the same as the names provided in the above mentioned <DAG.txt> file. If the names are not same or the files are empty, they would not be considered for the voting algorithm
+
+      <outputdir> - relative path to the outputdir which will have the desired directory structure as produced by the DAG mentioned in the file <DAG.txt>. Under this directory will also be another file named - "log.txt" which will contain the data about the threads in form of a log, mentioning the thread id and the status of the thread
+
+What exactly your program does:
+  The program as the name suggests is responsible to simulate a voting aggregation algorithm on the election files which contain the individual votes for candidates that ran in the election. Because the voting for a place is further divided into sub regions and so forth, the votecounter is responsible to aggregate the votes for all candidates from all these sub regions which are leaf nodes (no more further divided into sub regions) and finally declare the winner. For this particular assignment, the program uses a multithreading approach to calculate the winner in an election where each thread is responsible to start aggregating from a leaf node region till the top most region (no parent region). Each thread is responsible to only aggregate (add possibly to the existing file) the votes for the candidates cast in the region to which the thread is assigned and make sure that the votes for that region were counted in the top most region. After all the votes are aggregated by a thread the program determines the winner from the available information at the top most regions aggregated file and append the information about the winner candidate.
+
+Your and your partners individual contributions:
+  Saksham Goel - Work on the threading and aggregating votes. This includes making the functions corresponding to the candidate linked list aggregation from leaf node file and aggregated file. This also includes the functions dealing with actually implementing the threading and and synchronization. Also include working on logic for file IO related to votes. Also making the Candidate linked List functions. Also responsible for the remove directories function.
+
+  Franklin Hartman - Decryption, DAG construction, Queue Construction logic for FILE I/O. Includes work on parsing <DAG.txt> file for getting the initial DAG structure of nodes, then also for the logic behind changing the encrypted data to the decrypted data. Also responsible to go through the inputdir and add the required input file names to the shared queue.

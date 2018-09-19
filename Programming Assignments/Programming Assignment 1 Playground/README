@@ -1,0 +1,34 @@
+README FOR Programming Assignment 1
+
+/*  login : goelx029, hartm433
+*   date : 02/21/18
+*   name : Saksham Goel, Franklin Hartman
+*   id : goelx029(5138568), hartm433(5062484)
+*/
+
+The purpose of the program:-
+  The purpose of the program is to basically implement a voting algorithm that helps to find the winner of the elections based off regions. The program is based upon the dependency structure of the regions on each other to aggregate the results and ultimately find the winner of the whole region. Here the dependency of a region depends on many sub regions which may in turn depend on subregions. If some region does not have dependency, it means that votes were cast in that region and these votes are represented through the file containing votes. The program uses a fork and exec call structure to execute the given utilities individually based off the dependency structure of the region. These calls to fork and exec ensure that the process do the work that they need to do and then kill themselves. After executing all the utilities we generate output files for regions and subregions and these files basically denote the result for that particular region. All these outfiles are then aggregated based on the dependency structure and finally a winner is decided and the results are also printed out to a output file named Output_Who_Won.
+
+How to compile the program:-
+  We have provided a makefile in the package which could be used to automatically compile the program and make an executable named votecounter.
+
+How to use the program from the shell (syntax):-
+  You need to run the command of form "./votecounter %s" where %s represents the name of the input file. Ex. if the name of the input file is input.txt, then you need to run "./votecounter input.txt". Need to make sure that the executables (leafcounter, aggregate_votes, find_winner) are in the directory from where you are executing the program and also the files which contain the individual votes.
+
+What exactly does your program does:
+  The program uses a fork and exec call structure to execute the given utilities individually based off the dependency structure of the region. These calls to fork and exec ensure that the process do the work that they need to do and then kill themselves. After executing all the utilities we generate output files for regions and subregions and these files basically denote the result for that particular region. All these outfiles are then aggregated based on the dependency structure and finally a winner is decided and the results are also printed out to a output file named Output_Who_Won.
+  To implement the program first we parse through the given input file and make a DAG (Directed Acyclic Graph) where a region points to other sub regions on which it is dependent. After parsing through the input file and making a DAG, we implement a DFS (Depth First Search Algorithm) on the DAG that basically goes through each node and executes them. The executing part is a bit tricky as it involves, fork the process into a parent and a child process and then actually resolving the dependency control of a region on its subregions by resolving voting of all the subregions through the child process and then basically aggregating the votes of all these sub regions in the parent process created. After the whole fork and exec structure is set up in the DFSVisit (DFS helper) function it calls the execNode function which is responsible for executing the right executable with the correct arguments.
+
+
+Your x500 and the x500 of your partner:-
+  goelx029 - Saksham Goel
+  hartm433 - Franklin Hartman
+
+Your and your partner's individual contributions:-
+  We both worked on the project together, such that we first used to discuss what we will be doing and then splitting that part so that each of us can individually focus on one. used GIT as the VCS to merge the changes and developments. The contributions can be marked as follows:
+  goelx029 - Making DAG, Implementing DFS and execNodes
+  hartm433 - parsing the file, error handling, documentation.
+  Most of our work was distributed while making sure the of the strengths of the individual and what he/she would like to do.
+
+
+Note : A list of the edgecases covered is provided in the file Edgecases.
